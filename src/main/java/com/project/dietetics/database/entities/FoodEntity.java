@@ -59,8 +59,11 @@ public class FoodEntity {
     @Column(name = "glycemic_index")
     private Integer glycemicIndex;
 
-    @Column(name = "histamine_reaction")
-    private Integer histamineReaction;
+    @Column(name = "histamine_symptom_severity")
+    private Integer histamineSymptomSeverity;
+
+    @Column(name = "histamine_level")
+    private Integer histamineLevel;
 
     public Integer getId() {
         return id;
@@ -198,17 +201,25 @@ public class FoodEntity {
         this.glycemicIndex = glycemicIndex;
     }
 
-    public Integer getHistamineReaction() {
-        return histamineReaction;
+    public Integer getHistamineSymptomSeverity() {
+        return histamineSymptomSeverity;
     }
 
-    public void setHistamineReaction(Integer histamineReaction) {
-        this.histamineReaction = histamineReaction;
+    public void setHistamineSymptomSeverity(Integer histamineSymptomSeverity) {
+        this.histamineSymptomSeverity = histamineSymptomSeverity;
+    }
+
+    public Integer getHistamineLevel() {
+        return histamineLevel;
+    }
+
+    public void setHistamineLevel(Integer histamineLevel) {
+        this.histamineLevel = histamineLevel;
     }
 
     @Override
     public String toString() {
-        return "Food{" +
+        return "FoodEntity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", protein=" + protein +
@@ -226,7 +237,8 @@ public class FoodEntity {
                 ", vitaminE=" + vitaminE +
                 ", vitaminB12=" + vitaminB12 +
                 ", glycemicIndex=" + glycemicIndex +
-                ", histamineReaction=" + histamineReaction +
+                ", histamineSymptomSeverity=" + histamineSymptomSeverity +
+                ", histamineLevel=" + histamineLevel +
                 '}';
     }
 }

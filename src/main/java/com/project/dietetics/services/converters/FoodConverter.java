@@ -28,49 +28,70 @@ public class FoodConverter {
         switch (foodEntity.getGlycemicIndex()) {
             // TODO: Constants
             case 0:
-                foodModel.setGlycemicIndex("Nem okoz tünetet, nem tartalmaz hisztamint");
+                foodModel.setGlycemicIndex("Nagyon alacsony");
                 break;
             case 1:
-                foodModel.setGlycemicIndex("Nem okoz tünetet, de romlandó és gyorsan keletkezhet benne magas hisztamin szint");
+                foodModel.setGlycemicIndex("Alacsony");
                 break;
             case 2:
-                foodModel.setGlycemicIndex("Enyhe tünetet okoz, hisztamin tartalmú");
+                foodModel.setGlycemicIndex("Közepes");
                 break;
             case 3:
-                foodModel.setGlycemicIndex("Közepesen magas hisztamin tartalmú, jelentős tüneteket okozhat");
-                break;
-            case 4:
-                foodModel.setGlycemicIndex("BLA");
-                break;
-            case 5:
-                foodModel.setGlycemicIndex("Súlyos tünetet okoz, hisztamin tartalmú");
+                foodModel.setGlycemicIndex("Magas");
                 break;
             default:
                 foodModel.setGlycemicIndex("Nincs adat róla");
                 break;
         }
 
-        switch (foodEntity.getHistamineReaction()) {
+        switch (foodEntity.getHistamineSymptomSeverity()) {
             // TODO: Constants
             case 0:
-                foodModel.setHistamineReaction("Nem tartalmaz hisztamint");
+                foodModel.setHistamineSymptomSeverity("Nem okoz tünetet");
                 break;
             case 1:
-                foodModel.setHistamineReaction("Kis mennyiségben fogyasztható, kevés hisztamint tartalmaz");
+                foodModel.setHistamineSymptomSeverity("Enyhe tünetet okoz");
                 break;
             case 2:
-                foodModel.setHistamineReaction("Közepes hisztamint tartalmaz");
+                foodModel.setHistamineSymptomSeverity("Közepes tünetet okoz");
                 break;
             case 3:
-                foodModel.setHistamineReaction("Romlandó, gyorsan keletkezhet benne hisztamin");
+                foodModel.setHistamineSymptomSeverity("Jelentős tünetet okoz");
                 break;
             case 4:
-                foodModel.setHistamineReaction("Hisztamin felszabadító");
+                foodModel.setHistamineSymptomSeverity("Súlyos tünetet okoz");
+                break;
+            case -1:
+                foodModel.setHistamineSymptomSeverity("Nincs adat róla");
+            default:
+                foodModel.setGlycemicIndex("Nem létezik");
+                break;
+        }
+
+        switch (foodEntity.getHistamineLevel()) {
+            case 0:
+                foodModel.setHistamineLevel("Nem tartalmaz hisztamint");
+                break;
+            case 1:
+                foodModel.setHistamineLevel("Kis mennyiségben fogyasztható, kevés hisztamint tartalmaz");
+                break;
+            case 2:
+                foodModel.setHistamineLevel("Közepes hisztamint tartalmaz");
+                break;
+            case 3:
+                foodModel.setHistamineLevel("Romlandó, gyorsan keletkezhet benne hisztamin");
+                break;
+            case 4:
+                foodModel.setHistamineLevel("Hisztamin felszabadító");
                 break;
             case 5:
-                foodModel.setHistamineReaction("Hisztamint tartalmaz");
+                foodModel.setHistamineLevel("Hisztamint tartalmaz");
+                break;
+            case -1:
+                foodModel.setHistamineLevel("Nincs adat róla");
+                break;
             default:
-                foodModel.setGlycemicIndex("Nincs adat róla");
+                foodModel.setHistamineLevel("Nem létezik");
                 break;
         }
 
