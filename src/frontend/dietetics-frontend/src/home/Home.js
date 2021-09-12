@@ -1,18 +1,15 @@
 import { useState, useEffect } from 'react';
+import axios from "axios";
 import Food from "../food/Food";
 
 const Home = () => {
-
+    const baseURL = 'http://localhost:8080/food';
     const [foods, setFoods] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:8080/food')
-            .then(res => {
-                return res.json();
-            })
-            .then((data) => {
-                console.log(data)
-                setFoods(data);
+        axios.get(baseURL)
+            .then((res) => {
+                setFoods(res.data);
             })
     }, []);
 
