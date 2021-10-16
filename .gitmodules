@@ -1,0 +1,3 @@
+[submodule "src/frontend"]
+	path = src/frontend
+	url = /Users/beszedics/Documents/Dev/dietetics/src/frontend
