@@ -1,7 +1,7 @@
 package com.project.dietetics.controllers;
 
+import com.project.dietetics.database.entities.Food;
 import com.project.dietetics.services.FoodService;
-import com.project.dietetics.services.models.FoodModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,12 +16,12 @@ public class FoodController {
     private FoodService foodService;
 
     @GetMapping
-    public List<FoodModel> getAllFoods() {
+    public List<Food> getAllFoods() {
         return foodService.getAllFoods();
     }
 
     @GetMapping(value = "/{id}")
-    public FoodModel getFoodById(@PathVariable(name = "id") Integer id) {
+    public Food getFoodById(@PathVariable(name = "id") Integer id) {
         return foodService.getFoodById(id);
     }
 }

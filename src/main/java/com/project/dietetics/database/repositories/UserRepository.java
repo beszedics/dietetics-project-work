@@ -1,10 +1,12 @@
 package com.project.dietetics.database.repositories;
 
-import com.project.dietetics.database.entities.UserEntity;
-import org.springframework.data.repository.CrudRepository;
+import com.project.dietetics.database.entities.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends CrudRepository<UserEntity, Integer> {
+public interface UserRepository extends JpaRepository<User, Integer> {
+
+    User findByUsernameAndPassword(String username, String password);
 
 }

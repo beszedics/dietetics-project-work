@@ -1,10 +1,10 @@
 package com.project.dietetics.database.repositories;
 
-import com.project.dietetics.database.entities.FoodEntity;
-import org.springframework.data.repository.CrudRepository;
+import com.project.dietetics.database.entities.Food;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FoodRepository extends CrudRepository<FoodEntity, Integer> {
+public interface FoodRepository extends JpaRepository<Food, Integer> {
 
 }
